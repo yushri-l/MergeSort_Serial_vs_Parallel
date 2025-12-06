@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:/MinGW/include",
-                "C:/MinGW/x86_64-w64-mingw32/include"
+                "C:/MinGW/mingw32/include",
+                "C:/Program Files (x86)/Microsoft SDKs/MPI/Include"
             ],
             "defines": [],
             "compilerPath": "C:/MinGW/bin/gcc.exe",
