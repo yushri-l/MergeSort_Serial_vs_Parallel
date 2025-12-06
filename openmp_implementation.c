@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <omp.h>
 
-#define MAX_SIZE 250000   // max array size we expect
+#define MAX_SIZE 250000   // max array 
 
-// merge two sorted halves of the array (normal merge procedure)
+// merge two sorted halves of the array 
 void merge(int arr[], int l, int m, int r) {
     int i, j, k, n1 = m - l + 1, n2 = r - m;
 
@@ -37,7 +37,7 @@ void merge(int arr[], int l, int m, int r) {
         arr[k++] = R[j++];
 }
 
-// normal serial mergesort (used for small chunks)
+// normal serial mergesort 
 void mergeSortSerial(int arr[], int l, int r) {
     if(l < r) {
         int m = l + (r - l) / 2;
@@ -59,7 +59,7 @@ void mergeSortParallel(int arr[], int l, int r) {
     // only sort if more than one element
     if(l < r) {
 
-        // if the segment is small, no point using threads → use serial version
+        // if the segment is small, no point using threads , use serial version
         if(r - l < 1000) {
             mergeSortSerial(arr, l, r);
 

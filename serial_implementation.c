@@ -2,10 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_SIZE 250000   // max number of elements we expect
+#define MAX_SIZE 250000   // max number of elements 
 
-// This function merges two already sorted halves of the array.
-// Left part = arr[l..m], right part = arr[m+1..r]
+// This function merges two already sorted halves of the array
 void merge(int arr[], int l, int m, int r) {
 
     // sizes of the two sub arrays
@@ -38,7 +37,7 @@ void merge(int arr[], int l, int m, int r) {
         k++;
     }
 
-    // copy remaining values from left side if any
+    // copy remaining values from left side 
     while(i < n1) {
         arr[k] = left[i];
         i++;
@@ -73,7 +72,7 @@ void mergeSort(int arr[], int l, int r) {
 
 int main() {
 
-    int size = 250000;   // how many numbers to read
+    int size = 250000;   
     int arr[MAX_SIZE];   // array to store numbers
 
     // opening the input file

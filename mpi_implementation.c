@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <mpi.h>
 
-#define MAX_SIZE 250000   // total amount of data we expect
+#define MAX_SIZE 250000   // total amount of data
 
 void merge(int *a, int *b, int l, int m, int r);
 void mergeSort(int *a, int *b, int l, int r);
@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
     // allocate memory for each process's chunk
     sub_array = (int *)malloc(sub_size * sizeof(int));
 
-    // scatter the big array → each process gets a chunk
+    // scatter the big array -> each process gets a chunk
     MPI_Scatter(original_array, sub_size, MPI_INT,
                 sub_array, sub_size, MPI_INT,
                 0, MPI_COMM_WORLD);
@@ -114,7 +114,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-/********** merge two sorted halves into one **********/
+//merge two sorted halves into one 
 void merge(int *a, int *b, int l, int m, int r) {
 
     int h = l;      // pointer into left half
@@ -147,7 +147,7 @@ void merge(int *a, int *b, int l, int m, int r) {
         a[k] = b[k];
 }
 
-/********** basic recursive merge sort **********/
+//basic recursive merge sort
 void mergeSort(int *a, int *b, int l, int r) {
     if(l < r) {
         int m = (l + r) / 2;
